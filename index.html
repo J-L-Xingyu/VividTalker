@@ -3,44 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的作品集</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            background-color: #f4f4f9;
-        }
-        header {
-            background-color: #0078D4;
-            color: white;
-            padding: 20px;
-        }
-        section {
-            padding: 20px;
-        }
-        footer {
-            margin-top: 20px;
-            color: gray;
-        }
-    </style>
+    <title>VividTalker</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>欢迎来到我的成果展示页面</h1>
-    </header>
-    <section>
-        <h2>我的项目</h2>
-        <p>这是我做的一些项目和成就：</p>
-        <ul>
-            <li>项目 A: 简要描述</li>
-            <li>项目 B: 简要描述</li>
-            <li>项目 C: 简要描述</li>
-        </ul>
-    </section>
-    <footer>
-        <p>© 2024 My Portfolio</p>
-    </footer>
+    <!-- 主容器 -->
+    <div class="container">
+        <!-- 标题部分 -->
+        <header class="hero">
+            <h1 class="title">VividTalker</h1>
+            <p class="subtitle">An Automatic Text to Digital Human Generation System</p>
+            <div class="buttons">
+                <a href="your_paper_link.pdf" class="button paper">📄 Paper</a>
+                <a href="https://github.com/J-L-Xingyu/VividTalker" class="button code">💻 Code</a>
+            </div>
+            <p class="description">
+                <strong>VividTalker</strong> is an innovative system for <span class="highlight">text-to-digital human generation</span>.
+                It seamlessly integrates emotional tone, voice, and visual modalities to ensure high cross-modal consistency.
+                With its lightweight model, VividTalker can achieve <span class="highlight">real-time video synthesis</span>.
+            </p>
+        </header>
+
+        <!-- 视频展示区域 -->
+        <main class="video-gallery">
+            <!-- 示例1 -->
+            <div class="video-pair">
+                <div class="text-container">
+                    <h3>Input Text</h3>
+                    <p>"A female teacher explaining how photosynthesis works in plants."</p>
+                </div>
+                <div class="video-container">
+                    <video controls>
+                        <source src="output/7.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <!-- 示例2 -->
+            <div class="video-pair">
+                <div class="text-container">
+                    <h3>Input Text</h3>
+                    <p>"A male historian discussing ancient civilizations."</p>
+                </div>
+                <div class="video-container">
+                    <video controls>
+                        <source src="output/9.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <!-- 示例3 -->
+            <div class="video-pair">
+                <div class="text-container">
+                    <h3>Input Text</h3>
+                    <p>"An elderly man talking about his childhood memories."</p>
+                </div>
+                <div class="video-container">
+                    <video controls>
+                        <source src="output/video_20_out.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </main>
+
+        <!-- 技术细节 -->
+        <section class="details">
+            <h2>Technical Highlights</h2>
+            <ul>
+                <li>High consistency across appearance, voice, and expression.</li>
+                <li>Seamless integration of multimodal generation processes.</li>
+                <li>Real-time video synthesis with lightweight models.</li>
+            </ul>
+        </section>
+
+        <!-- 底部 -->
+        <footer>
+            <p>© 2024 VividTalker Team</p>
+        </footer>
+    </div>
 </body>
 </html>
