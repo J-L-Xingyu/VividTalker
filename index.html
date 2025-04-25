@@ -1,88 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VividTalker</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VividTalker - From Text to Lifelike Digital Humans</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #0f172a;
+      font-family: 'Inter', sans-serif;
+      color: #e5e7eb;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+    .hero {
+      text-align: center;
+      padding: 80px 10px;
+      background: linear-gradient(135deg, rgba(59,130,246,0.3) 0%, rgba(139,92,246,0.3) 100%);
+      border-radius: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      left: -100px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(59,130,246,0.5) 0%, transparent 70%);
+      filter: blur(80px);
+    }
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+    .hero p.subtitle {
+      font-size: 1.3rem;
+      opacity: 0.85;
+      margin-bottom: 30px;
+    }
+    .buttons a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      color: #fff;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .buttons a:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    }
+    .highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin: 60px 0;
+      justify-content: center;
+    }
+    .highlight-card {
+      background: rgba(255,255,255,0.05);
+      border-radius: 16px;
+      padding: 30px;
+      flex: 1 1 300px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+    .highlight-card:hover {
+      transform: translateY(-5px);
+    }
+    .highlight-card i {
+      font-size: 2rem;
+      color: #60a5fa;
+      margin-bottom: 15px;
+    }
+    .highlight-card h3 {
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    .highlight-card p {
+      font-size: 1rem;
+      opacity: 0.85;
+    }
+    .video-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      margin: 40px 0;
+    }
+    .video-item {
+      width: 390px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+    .video-item:hover {
+      transform: translateY(-5px);
+    }
+    .video-item h4 {
+      padding: 15px;
+      margin: 0;
+      font-size: 1rem;
+      color: #60a5fa;
+      text-align: center;
+    }
+    .video-container video {
+      width: 100%;
+      height: auto;
+      display: block;
+      background: #000;
+      aspect-ratio: 16 / 9;
+    }
+    .why-section {
+      margin: 80px 0;
+    }
+    .why-section h2 {
+      text-align: center;
+      color: #8b5cf6;
+      margin-bottom: 40px;
+      font-size: 2rem;
+    }
+    .why-section ul {
+      list-style: none;
+      padding: 0;
+      max-width: 800px;
+      margin: auto;
+    }
+    .why-section ul li {
+      margin: 20px 0;
+      background: rgba(255,255,255,0.05);
+      padding: 20px;
+      border-radius: 12px;
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+    }
+    .why-section ul li i {
+      color: #3b82f6;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+    footer {
+      text-align: center;
+      margin: 80px 0 20px;
+      color: #777;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
-    <!-- 主容器 -->
-    <div class="container">
-        <!-- 标题部分 -->
-        <header class="hero">
-            <h1 class="title">VividTalker</h1>
-            <p class="subtitle">An Automatic Text to Digital Human Generation System</p>
-            <div class="buttons">
-                <a href="your_paper_link.pdf" class="button paper">📄 Paper</a>
-                <a href="https://github.com/J-L-Xingyu/VividTalker" class="button code">💻 Code</a>
-            </div>
-            <p class="description">
-                <strong>VividTalker</strong> is an innovative system for <span class="highlight">text-to-digital human generation</span>.
-                It seamlessly integrates emotional tone, voice, and visual modalities to ensure high cross-modal consistency.
-                With its lightweight model, VividTalker can achieve <span class="highlight">real-time video synthesis</span>.
-            </p>
-        </header>
+  <div class="container">
+    <header class="hero">
+      <h1>From Text to Lifelike Digital Humans</h1>
+      <p class="subtitle">Real-time multimodal generation with cross-modal consistency</p>
+      <div class="buttons">
+        <a href="your_paper_link.pdf">📄 Paper</a>
+        <a href="https://github.com/J-L-Xingyu/VividTalker">💻 Code</a>
+      </div>
+    </header>
 
-        <!-- 视频展示区域 -->
-        <main class="video-gallery">
-            <!-- 示例1 -->
-            <div class="video-pair">
-                <div class="text-container">
-                    <h3>Input Text</h3>
-                    <p>"A female teacher explaining how photosynthesis works in plants."</p>
-                </div>
-                <div class="video-container">
-                    <video controls>
-                        <source src="output/7.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-            </div>
+    <section class="highlights">
+      <div class="highlight-card">
+        <i class="fas fa-layer-group"></i>
+        <h3>Unified Generation</h3>
+        <p>Integrates text, image, and audio generation in a single streamlined pipeline.</p>
+      </div>
+      <div class="highlight-card">
+        <i class="fas fa-sliders-h"></i>
+        <h3>Cross-modal Consistency</h3>
+        <p>Ensures alignment between appearance, voice, and expression for emotional coherence.</p>
+      </div>
+    </section>
 
-            <!-- 示例2 -->
-            <div class="video-pair">
-                <div class="text-container">
-                    <h3>Input Text</h3>
-                    <p>"A male historian discussing ancient civilizations."</p>
-                </div>
-                <div class="video-container">
-                    <video controls>
-                        <source src="output/9.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-            </div>
+    <main class="video-gallery">
+      <div class="video-item">
+        <h4>Input: A female teacher explaining photosynthesis</h4>
+        <div class="video-container">
+          <video controls poster="output/thumbnails/7.png">
+            <source src="output/7.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="video-item">
+        <h4>Input: A male historian discussing ancient civilizations</h4>
+        <div class="video-container">
+          <video controls poster="output/thumbnails/9.png">
+            <source src="output/9.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="video-item">
+        <h4>Input: An elderly man sharing childhood memories</h4>
+        <div class="video-container">
+          <video controls poster="output/thumbnails/20.png">
+            <source src="output/video_20_out.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </main>
 
-            <!-- 示例3 -->
-            <div class="video-pair">
-                <div class="text-container">
-                    <h3>Input Text</h3>
-                    <p>"An elderly man talking about his childhood memories."</p>
-                </div>
-                <div class="video-container">
-                    <video controls>
-                        <source src="output/video_20_out.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-            </div>
-        </main>
+    <section class="why-section">
+      <h2>Why VividTalker?</h2>
+      <ul>
+        <li><i class="fas fa-chart-line"></i> <strong>User Study:</strong> Scored 8.1/10 in overall quality, close to real human videos (9.23/10).</li>
+        <li><i class="fas fa-bolt"></i> <strong>Efficiency:</strong> Outpaces heavier models like GPT-3.5, suitable for real-time applications.</li>
+        <li><i class="fas fa-brain"></i> <strong>SLM-powered AI Agent:</strong> Efficient multimodal generation with balanced speed and quality.</li>
+        <li><i class="fas fa-user-circle"></i> <strong>Virtual Persona Design:</strong> Auto-generates character appearance, attire, and background aligned with content.</li>
+        <li><i class="fas fa-microphone"></i> <strong>Emotion-Aware Voice:</strong> Generates vocal tones that match visual personas and emotional context.</li>
+        <li><i class="fas fa-video"></i> <strong>End-to-End Pipeline:</strong> Seamlessly converts text → image + audio → coherent talking-head videos.</li>
+      </ul>
+    </section>
 
-        <!-- 技术细节 -->
-        <section class="details">
-            <h2>Technical Highlights</h2>
-            <ul>
-                <li>High consistency across appearance, voice, and expression.</li>
-                <li>Seamless integration of multimodal generation processes.</li>
-                <li>Real-time video synthesis with lightweight models.</li>
-            </ul>
-        </section>
-
-        <!-- 底部 -->
-        <footer>
-            <p>© 2024 VividTalker Team</p>
-        </footer>
-    </div>
+    <footer>
+      <p>© 2024 VividTalker Team</p>
+    </footer>
+  </div>
 </body>
 </html>
